@@ -20,8 +20,8 @@
 		</ul>
 		<h3>Users</h3>
 		<ul class="toggle">
-			<li class="icn_add_user"><a href="#">Add New User</a></li>
-			<li class="icn_view_users"><a href="#">View Users</a></li>
+			<li class="icn_add_user"><a href="#new_User">Add New User</a></li>
+			<li class="icn_view_users"><a href="#tabla_usuario">View Users</a></li>
 			<li class="icn_profile"><a href="#">Your Profile</a></li>
 		</ul>
 		<h3>Admin</h3>
@@ -59,7 +59,6 @@
 				<div class="clear"></div>
 			</div>
 		</article><!-- end of stats article -->
-		
 		<article class="module width_3_quarter">
 		<header><h3 class="tabs_involved">List Messages</h3>
 		</header>
@@ -203,9 +202,139 @@
 			</div><!-- end of #tab1 -->
 			
 		</div><!-- end of .tab_container -->
+		<!-- end of list votes -->
+		<!-- añadir a un usuario nuevo  -->
+		</article>
 		
-		</article><!-- end of list votes -->
+		<article class="module width_3_quarter">
+		<div id="new_User">
+			<header><h3 class="icn_add_user">Añadir usuario</h3></header>
+			<form class="form-horizontal" action="signin" method="POST">
+				<input type="hidden" id="source" name="source"
+					value="${requestScope['javax.servlet.forward.servlet_path']}" />
+				<div class="form-group">
+					<label for="inputName" class="col-sm-2 control-label">Nombre</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="firstName" id="nombre"
+							placeholder="Nombre">
+					</div>
+				</div>
+		
+				<div class="form-group">
+					<label for="inputLastName" class="col-sm-2 control-label">Apellidos</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="lastName"
+							id="apellidos" placeholder="Apellidos">
+					</div>
+				</div>
+		
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" name="email" id="email"
+							placeholder="Email">
+					</div>
+				</div>
+		
+				<div class="form-group">
+					<label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" name="pass" id="pass"
+							placeholder="Contraseña">
+					</div>
+				</div>
+		
+				<div class="form-group">
+					<label for="inputRepassword" class="col-sm-2 control-label">Repita
+						contraseña</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="repass"
+							placeholder="Repita contraseña">
+					</div>
+				</div>
 		
 		
-
+				<div class="form-group">
+					<label for="inputRepassword" class="col-sm-2 control-label">Rol</label>
+					<div class="col-lg-6">
+						<div class="input-group">
+							<input type="radio" name="sex" value="Profesor">Profesor <input
+								type="radio" name="sex" value="Alumno">Alumno
+						</div>
+					</div>
+				</div>
+		
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">Añadir</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		</article>
+		
+		
+		<article class="module width_3_quarter">
+		<header><h3 class="tabs_involved">Lista de usuario</h3>
+		</header>
+		<div class="tabla_usuario">
+			<div id="votes" class="tab_content" style="display: block;">
+			<table class="tablesorter" cellspacing="0" > 
+			<thead> 
+				<tr> 
+   					<th class="header"></th> 
+    				<th class="header">User</th> 
+    				<th class="header">Rol</th> 
+    				<th class="header">Mark(0-5)</th> 
+    				<th class="header">Actions</th> 
+				</tr> 
+			</thead> 
+			<tbody> 
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Lorem Ipsum Dolor Sit Amet</td> 
+    				<td>student</td> 
+    				<td>2</td> 
+    				<td><input type="image" src="resources/img/img_admin/icn_edit.png" title="Edit"><input type="image" src="resources/img/img_admin/icn_trash.png" title="Trash"></td> 
+				</tr> 
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Ipsum Lorem Dolor Sit Amet</td> 
+    				<td>teacher</td> 
+    				<td>1</td> 
+   				 	<td><input type="image" src="resources/img/img_admin/icn_edit.png" title="Edit"><input type="image" src="resources/img/img_admin/icn_trash.png" title="Trash"></td> 
+				</tr>
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Sit Amet Dolor Ipsum</td> 
+    				<td>teacher</td> 
+    				<td>5</td> 
+    				<td><input type="image" src="resources/img/img_admin/icn_edit.png" title="Edit"><input type="image" src="resources/img/img_admin/icn_trash.png" title="Trash"></td> 
+				</tr> 
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Dolor Lorem Amet</td> 
+    				<td>student</td> 
+    				<td>4</td> 
+   				 	<td><input type="image" src="resources/img/img_admin/icn_edit.png" title="Edit"><input type="image" src="resources/img/img_admin/icn_trash.png" title="Trash"></td> 
+				</tr>
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Dolor Lorem Amet</td> 
+    				<td>teacher</td> 
+    				<td>3</td> 
+   				 	<td><input type="image" src="resources/img/img_admin/icn_edit.png" title="Edit"><input type="image" src="resources/img/img_admin/icn_trash.png" title="Trash"></td> 
+				</tr>  
+			</tbody> 
+			</table>
+			</div><!-- end of #tab1 -->
+			
+		</div><!-- end of tab user -->
+		<!-- end of list user -->
+		</article>
+		
+		
+		</section>
+		
+<!-- cambiar el footer -->
 <%@ include file="../fragments/footer.jspf" %>

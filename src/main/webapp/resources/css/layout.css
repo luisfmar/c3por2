@@ -198,6 +198,7 @@ background: #E0E0E3 url(../img/img_admin/sidebar.png) repeat;
 float: left;
 min-height: 500px;
 margin-top: -4px;
+position:fixed;
 }
 
 #sidebar hr {
@@ -251,7 +252,7 @@ font-size: 13px;
 margin: 10px 0 10px 6%;
 display: block;
 float: left;
-width: 90%;
+width: 90%; 	
 }
 
 .toggleLink {
@@ -365,8 +366,9 @@ section#main {
 width: 77%;
 min-height: 500px;
 background: url(../img/img_admin/sidebar_shadow.png) repeat-y left top;
-float: left;
+float: right;
 margin-top: -2px;
+
 }
 
 #main h3 {
